@@ -15,11 +15,11 @@ COPY . /app
 # Install packages specified in requirements.txt
 RUN pip install -r requirements.txt 
 
-# Make port 80 available 
+# Make port 5000 available 
 EXPOSE 5000
 
 # Define environment variable
 ENV NAME World
 
-CMD ["python", "app.py"]
+CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "5000"]
 
